@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Naming the Active Adult Portfolio Under One Clover</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --clover-green: #2D5016;
+    --clover-mid: #4A7C23;
+    --clover-light: #7BAF3A;
+    --clover-pale: #EFF5E8;
+    --clover-warm: #F7F4EE;
+    --gold: #C9A84C;
+    --gold-light: #F0E4C0;
+    --text-dark: #1A1A1A;
+    --text-mid: #4A4A4A;
+    --text-light: #7A7A7A;
+    --white: #FFFFFF;
+    --border: #E0DDD5;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--clover-warm);
+    color: var(--text-dark);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* COVER PAGE */
+  .cover {
+    background: var(--clover-green);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    right: -120px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 520px;
+    height: 520px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, rgba(123,175,58,0.18), transparent 65%);
+    pointer-events: none;
+  }
+
+  .cover-tag {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--clover-light);
+    margin-bottom: 32px;
+    position: relative;
+  }
+
+  .cover h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 64px;
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.1;
+    max-width: 720px;
+    margin-bottom: 32px;
+    position: relative;
+  }
+
+  .cover h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .cover-sub {
+    font-size: 16px;
+    color: rgba(255,255,255,0.65);
+    max-width: 560px;
+    line-height: 1.6;
+    margin-bottom: 60px;
+    position: relative;
+  }
+
+  .cover-meta {
+    display: flex;
+    gap: 48px;
+    position: relative;
+  }
+
+  .cover-meta-item {
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 16px;
+  }
+
+  .cover-meta-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 4px;
+  }
+
+  .cover-meta-value {
+    font-size: 14px;
+    color: rgba(255,255,255,0.85);
+    font-weight: 500;
+  }
+
+  /* LAYOUT */
+  .container {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 80px 40px;
+  }
+
+  /* SECTION HEADERS */
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--clover-light);
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 300;
+    color: var(--clover-green);
+    line-height: 1.2;
+    margin-bottom: 32px;
+  }
+
+  /* DIVIDER */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 64px 0;
+  }
+
+  /* INTRO BLOCK */
+  .intro-block {
+    background: var(--white);
+    border-left: 4px solid var(--clover-green);
+    padding: 32px 40px;
+    margin-bottom: 48px;
+    border-radius: 0 8px 8px 0;
+  }
+
+  .intro-block p {
+    font-size: 16px;
+    color: var(--text-mid);
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+
+  .intro-block p:last-child { margin-bottom: 0; }
+
+  /* CONTEXT GRID */
+  .context-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+
+  .context-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+  }
+
+  .context-card-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 12px;
+  }
+
+  .context-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--clover-green);
+    margin-bottom: 12px;
+  }
+
+  .context-card p {
+    font-size: 14px;
+    color: var(--text-mid);
+    line-height: 1.7;
+  }
+
+  /* STORY BLOCK */
+  .story-block {
+    background: var(--clover-green);
+    border-radius: 16px;
+    padding: 56px;
+    margin-bottom: 48px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .story-block::after {
+    content: '"';
+    position: absolute;
+    right: 40px;
+    top: 20px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 200px;
+    color: rgba(255,255,255,0.05);
+    line-height: 1;
+  }
+
+  .story-block .section-label { color: var(--clover-light); }
+
+  .story-block h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.3;
+    margin-bottom: 24px;
+    max-width: 640px;
+  }
+
+  .story-block p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.78);
+    line-height: 1.8;
+    max-width: 660px;
+    margin-bottom: 16px;
+  }
+
+  .story-pillars {
+    display: flex;
+    gap: 32px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+  }
+
+  .story-pillar {
+    border-top: 2px solid var(--gold);
+    padding-top: 16px;
+    min-width: 200px;
+    flex: 1;
+  }
+
+  .story-pillar-label-small {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+
+  .story-pillar-label {
+    font-size: 13px;
+    color: rgba(255,255,255,0.78);
+    line-height: 1.6;
+  }
+
+  /* ARCHITECTURE BOX */
+  .architecture-box {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px 40px;
+    margin-bottom: 48px;
+  }
+
+  .architecture-box h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--clover-green);
+    margin-bottom: 20px;
+  }
+
+  .architecture-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .architecture-item {
+    background: var(--clover-pale);
+    border-radius: 8px;
+    padding: 20px;
+  }
+
+  .architecture-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--clover-mid);
+    margin-bottom: 8px;
+  }
+
+  .architecture-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: var(--clover-green);
+    line-height: 1.3;
+  }
+
+  /* CAUTION BOX */
+  .warning-box {
+    background: #FFF8ED;
+    border: 1px solid #E8C97A;
+    border-left: 4px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+    padding: 24px 28px;
+    margin-bottom: 32px;
+  }
+
+  .warning-box-title {
+    font-weight: 500;
+    color: #7A5A00;
+    margin-bottom: 8px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .warning-box p {
+    font-size: 14px;
+    color: #5A4400;
+    line-height: 1.7;
+    margin-bottom: 8px;
+  }
+
+  .warning-box p:last-child { margin-bottom: 0; }
+
+  .avoid-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .avoid-chip {
+    background: var(--white);
+    border: 1px solid #E8C97A;
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 12px;
+    color: #7A5A00;
+  }
+
+  /* CRITERIA GRID */
+  .criteria-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+
+  .criteria-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 24px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .criteria-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .criteria-content h4 {
+    font-size: 15px;
+    color: var(--clover-green);
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+
+  .criteria-content p {
+    font-size: 13px;
+    color: var(--text-mid);
+    line-height: 1.5;
+  }
+
+  /* NAME CARDS */
+  .name-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+  }
+
+  .name-card-header {
+    padding: 40px 48px 32px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 32px;
+  }
+
+  .name-card-header-left { flex: 1; min-width: 0; }
+
+  .name-tag {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+
+  .tag-top { background: var(--clover-pale); color: var(--clover-green); }
+  .tag-strong { background: #EEF4FF; color: #1F4A8A; }
+  .tag-operational { background: #F0EEF8; color: #4A3A8A; }
+  .tag-reference { background: var(--gold-light); color: #7A5A00; }
+
+  .name-card h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 300;
+    color: var(--clover-green);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .name-lockup {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--text-mid);
+    margin-bottom: 8px;
+  }
+
+  .name-pronunciation {
+    font-size: 13px;
+    color: var(--text-light);
+    font-style: italic;
+  }
+
+  .name-scores {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 240px;
+    flex-shrink: 0;
+  }
+
+  .score-row {
+    display: grid;
+    grid-template-columns: 110px 1fr 32px;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .score-label {
+    font-size: 10px;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+
+  .score-bar {
+    height: 4px;
+    background: var(--clover-pale);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .score-fill {
+    height: 100%;
+    background: var(--clover-green);
+    border-radius: 2px;
+  }
+
+  .score-value {
+    font-size: 11px;
+    color: var(--clover-green);
+    font-weight: 500;
+    text-align: right;
+  }
+
+  .score-text {
+    grid-column: 2 / span 2;
+    font-size: 11px;
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  .name-card-body {
+    padding: 40px 48px;
+  }
+
+  .property-examples {
+    background: var(--clover-pale);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 24px;
+    font-size: 13px;
+    color: var(--clover-green);
+  }
+
+  .property-examples strong {
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 10px;
+    color: var(--clover-mid);
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .name-meaning {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-style: italic;
+    color: var(--text-mid);
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .name-story {
+    font-size: 15px;
+    color: var(--text-mid);
+    line-height: 1.8;
+    margin-bottom: 24px;
+  }
+
+  .pros-cons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+
+  .pros, .cons {
+    padding: 24px;
+    border-radius: 10px;
+  }
+
+  .pros { background: var(--clover-pale); }
+  .cons { background: #FFF4F2; }
+
+  .pros h4, .cons h4 {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+
+  .pros h4 { color: var(--clover-green); }
+  .cons h4 { color: #A84C2D; }
+
+  .pros ul, .cons ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .pros li, .cons li {
+    font-size: 14px;
+    line-height: 1.5;
+    padding-left: 20px;
+    position: relative;
+    color: var(--text-mid);
+  }
+
+  .pros li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--clover-green);
+    font-weight: 600;
+  }
+
+  .cons li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: #A84C2D;
+    font-weight: 600;
+  }
+
+  .tagline-box {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+  }
+
+  .tagline-box-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--clover-mid);
+    margin-bottom: 10px;
+  }
+
+  .tagline-box p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-style: italic;
+    color: var(--clover-green);
+    line-height: 1.5;
+  }
+
+  .legal-note {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    background: #FFF8ED;
+    color: #7A5A00;
+    border: 1px solid #E8C97A;
+  }
+
+  /* COMPARISON TABLE */
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 48px;
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+    font-size: 13px;
+  }
+
+  .comparison-table th {
+    background: var(--clover-green);
+    color: rgba(255,255,255,0.85);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 14px 12px;
+    text-align: center;
+    font-weight: 500;
+  }
+
+  .comparison-table th:first-child { text-align: left; padding-left: 20px; }
+
+  .comparison-table td {
+    padding: 16px 12px;
+    color: var(--text-mid);
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  .comparison-table td:first-child { text-align: left; padding-left: 20px; }
+  .comparison-table tr:last-child td { border-bottom: none; }
+  .comparison-table tr:hover td { background: var(--clover-pale); }
+
+  .comparison-table .name-cell {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    color: var(--clover-green);
+    font-weight: 400;
+  }
+
+  .score-num {
+    font-weight: 500;
+    color: var(--clover-green);
+  }
+
+  .pill {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .pill-green { background: var(--clover-pale); color: var(--clover-green); }
+  .pill-blue { background: #EEF4FF; color: #1F4A8A; }
+  .pill-yellow { background: var(--gold-light); color: #7A5A00; }
+  .pill-purple { background: #F0EEF8; color: #4A3A8A; }
+
+  /* RECOMMENDATION */
+  .recommendation {
+    background: var(--clover-green);
+    border-radius: 16px;
+    padding: 56px;
+    margin-bottom: 48px;
+  }
+
+  .recommendation .section-label { color: var(--clover-light); }
+
+  .recommendation h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    font-weight: 300;
+    color: var(--white);
+    margin-bottom: 32px;
+    line-height: 1.2;
+    max-width: 620px;
+  }
+
+  .rec-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 32px;
+  }
+
+  .rec-card {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    padding: 28px;
+  }
+
+  .rec-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 44px;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .rec-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+
+  .rec-position {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .rec-why {
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.6;
+  }
+
+  .rec-footer {
+    background: rgba(255,255,255,0.06);
+    border-radius: 10px;
+    padding: 24px 28px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.7;
+  }
+
+  .rec-footer strong {
+    color: var(--white);
+    font-weight: 500;
+  }
+
+  /* SUMMARY TABLE */
+  .summary-section {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 48px;
+    border: 1px solid var(--border);
+    margin-bottom: 48px;
+  }
+
+  .summary-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 300;
+    color: var(--clover-green);
+    margin-bottom: 32px;
+  }
+
+  .summary-row {
+    display: grid;
+    grid-template-columns: 200px 1fr auto;
+    gap: 24px;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .summary-row:last-child { border-bottom: none; }
+
+  .summary-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    color: var(--clover-green);
+  }
+
+  .summary-desc {
+    font-size: 14px;
+    color: var(--text-mid);
+    line-height: 1.55;
+  }
+
+  /* EXCLUDED SECTION */
+  .excluded-section {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px 40px;
+    margin-bottom: 48px;
+  }
+
+  .excluded-section h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--clover-green);
+    margin-bottom: 8px;
+  }
+
+  .excluded-section > p {
+    font-size: 14px;
+    color: var(--text-mid);
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+
+  .excluded-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .excluded-list li {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 16px;
+    padding: 14px 0;
+    border-top: 1px solid var(--border);
+    font-size: 14px;
+    color: var(--text-mid);
+    line-height: 1.6;
+  }
+
+  .excluded-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: var(--text-dark);
+  }
+
+  /* FOOTER */
+  .doc-footer {
+    text-align: center;
+    padding: 48px 40px;
+    color: var(--text-light);
+    font-size: 13px;
+    border-top: 1px solid var(--border);
+    max-width: 720px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  @media print {
+    .cover { min-height: auto; padding: 60px; }
+    .name-card { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-tag">Confidential — Brand Strategy Recommendation</div>
+  <h1>Naming the <em>Active Adult</em> Portfolio Under One Clover</h1>
+  <p class="cover-sub">A strategic naming recommendation for replacing Connect55+ with a distinct, resident-friendly portfolio brand.</p>
+  <div class="cover-meta">
+    <div class="cover-meta-item">
+      <div class="cover-meta-label">Prepared for</div>
+      <div class="cover-meta-value">Clover Leadership / Welltower</div>
+    </div>
+    <div class="cover-meta-item">
+      <div class="cover-meta-label">Prepared by</div>
+      <div class="cover-meta-value">Brand & Design Team</div>
+    </div>
+    <div class="cover-meta-item">
+      <div class="cover-meta-label">Status</div>
+      <div class="cover-meta-value">For Review & Discussion</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTEXT -->
+<div class="container">
+  <div class="section-label">Background</div>
+  <h2 class="section-title">What We're Solving</h2>
+
+  <div class="intro-block">
+    <p>The Connect55+ name is being retired as the licensing arrangement with Calamar comes to an end. The portfolio — more than thirty active adult apartment communities across eleven states — needs a new brand that can sit cleanly under One Clover and carry the platform forward for years to come.</p>
+    <p>This document presents a focused shortlist of naming candidates, evaluated against a strategic scoring framework. It concludes with a clear lead recommendation, two strong alternatives, an operationally strong backup, and a discussion of the client-submitted reference name.</p>
+  </div>
+
+  <div class="context-grid">
+    <div class="context-card">
+      <div class="context-card-label">The Portfolio</div>
+      <h3>30+ Active Adult Communities</h3>
+      <p>Apartment communities across eleven states, primarily serving residents aged 65 and older. The brand must scale gracefully across diverse markets and property names.</p>
+    </div>
+    <div class="context-card">
+      <div class="context-card-label">The Product</div>
+      <h3>Market-Rate, Independent</h3>
+      <p>Positioned above affordable housing and below independent living. Active, independent residents. Elevated, but approachable — not luxury, not clinical, not care-adjacent.</p>
+    </div>
+    <div class="context-card">
+      <div class="context-card-label">The Audience</div>
+      <h3>Residents & Adult Children</h3>
+      <p>Active adults choosing their next chapter, often alongside adult children who weigh in. The name must feel like a confident, dignified address — easy to say, easy to share.</p>
+    </div>
+    <div class="context-card">
+      <div class="context-card-label">Brand Architecture</div>
+      <h3>Sub-Brand of One Clover</h3>
+      <p>The new portfolio operates under the approved "by One Clover" lockup. The Clover connection is carried by the visual identity and management attribution — not by the portfolio name itself.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- STRATEGIC SHIFT -->
+  <div class="story-block">
+    <div class="section-label">The Strategic Shift</div>
+    <h2>The Portfolio Name Should Not Repeat Clover</h2>
+    <p>The instinct to thread "Clover" into the portfolio name is understandable, but it creates redundancy in the approved architecture. The Clover connection is already carried — clearly and consistently — through the lockup, the visual mark, the color system, and the "Proudly Managed by One Clover" attribution on signage and marketing.</p>
+    <p>The portfolio name should do a different job. It should establish a distinct, ownable identity that feels warm, credible, and easy for residents, property managers, and referral sources to use every day. A strong portfolio name complements One Clover. It does not echo it.</p>
+    <div class="story-pillars">
+      <div class="story-pillar">
+        <div class="story-pillar-label-small">Portfolio</div>
+        <div class="story-pillar-label">[Brand] by One Clover</div>
+      </div>
+      <div class="story-pillar">
+        <div class="story-pillar-label-small">Property</div>
+        <div class="story-pillar-label">[Brand] at [Location]</div>
+      </div>
+      <div class="story-pillar">
+        <div class="story-pillar-label-small">Signage Attribution</div>
+        <div class="story-pillar-label">Proudly Managed by One Clover</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="architecture-box">
+    <h3>Why Architecture Drives the Shortlist</h3>
+    <p style="font-size:14px;color:var(--text-mid);line-height:1.7;margin-bottom:20px;">Any name containing "Clover" creates awkward duplication in the approved lockup — for example, "Four by Clover by One Clover" or "Clover Hearth by One Clover." These constructions confuse the brand architecture and weaken the parent attribution. The shortlist below has been built to work cleanly with the lockup from the start.</p>
+    <div class="architecture-grid">
+      <div class="architecture-item">
+        <div class="architecture-label">Works cleanly</div>
+        <div class="architecture-value">Linden by One Clover</div>
+      </div>
+      <div class="architecture-item">
+        <div class="architecture-label">Avoid</div>
+        <div class="architecture-value">Clover Hearth by One Clover</div>
+      </div>
+      <div class="architecture-item">
+        <div class="architecture-label">Avoid</div>
+        <div class="architecture-value">Four by Clover by One Clover</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- CAUTION -->
+  <div class="section-label">Critical Boundaries</div>
+  <h2 class="section-title">A Naming Break, Not a Softened Echo</h2>
+
+  <div class="warning-box">
+    <div class="warning-box-title">Avoid Any Continuation of Connect55+ or Calamar Brand Territory</div>
+    <p>Because the Calamar licensing arrangement is ending, the new brand and its supporting language must separate cleanly from anything that could be read as a continuation of Connect55+. The cleanest path is a naming break, not a softened echo. Specifically, the following should be avoided in the name and in supporting messaging:</p>
+    <div class="avoid-list">
+      <span class="avoid-chip">Connect</span>
+      <span class="avoid-chip">Connected</span>
+      <span class="avoid-chip">Connection</span>
+      <span class="avoid-chip">Kinnect</span>
+      <span class="avoid-chip">Connext</span>
+      <span class="avoid-chip">55 / 55+ / 65</span>
+      <span class="avoid-chip">Any age-number marker</span>
+      <span class="avoid-chip">"Come as neighbors, live as friends"</span>
+      <span class="avoid-chip">Lightly rewritten Connect55+ phrasing</span>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SCORING CRITERIA -->
+  <div class="section-label">Evaluation Framework</div>
+  <h2 class="section-title">How We Scored Each Name</h2>
+
+  <div class="criteria-grid">
+    <div class="criteria-card">
+      <div class="criteria-num">01</div>
+      <div class="criteria-content">
+        <h4>Brand Fit</h4>
+        <p>Does it feel natural under One Clover without repeating Clover?</p>
+      </div>
+    </div>
+    <div class="criteria-card">
+      <div class="criteria-num">02</div>
+      <div class="criteria-content">
+        <h4>Resident Usability</h4>
+        <p>Can residents and property managers say, spell, and remember it easily?</p>
+      </div>
+    </div>
+    <div class="criteria-card">
+      <div class="criteria-num">03</div>
+      <div class="criteria-content">
+        <h4>Warmth</h4>
+        <p>Does it feel like a place someone would be proud to call home?</p>
+      </div>
+    </div>
+    <div class="criteria-card">
+      <div class="criteria-num">04</div>
+      <div class="criteria-content">
+        <h4>Distinctiveness</h4>
+        <p>Is it clearly separate from Connect55+, Calamar, and generic senior living?</p>
+      </div>
+    </div>
+    <div class="criteria-card">
+      <div class="criteria-num">05</div>
+      <div class="criteria-content">
+        <h4>Story Depth</h4>
+        <p>Can the committee defend the name intellectually and emotionally?</p>
+      </div>
+    </div>
+    <div class="criteria-card">
+      <div class="criteria-num">06</div>
+      <div class="criteria-content">
+        <h4>Trademark Risk</h4>
+        <p>Directional risk only. All names require formal legal review before selection.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- NAME CANDIDATES -->
+  <div class="section-label">Naming Candidates</div>
+  <h2 class="section-title">The Shortlist</h2>
+
+  <!-- LINDEN -->
+  <div class="name-card">
+    <div class="name-card-header">
+      <div class="name-card-header-left">
+        <span class="name-tag tag-top">★ Top Recommendation</span>
+        <h2>Linden</h2>
+        <div class="name-lockup">Linden by One Clover</div>
+        <div class="name-pronunciation">/ LIN-den /</div>
+      </div>
+      <div class="name-scores">
+        <div class="score-row">
+          <span class="score-label">Brand Fit</span>
+          <div class="score-bar"><div class="score-fill" style="width:95%"></div></div>
+          <span class="score-value">95</span>
+        </div>
+        <div class="score-row">
+          <span class="score-label">Usability</span>
+          <div class="score-bar"><div class="score-fill" style="width:95%"></div></div>
+          <span class="score-value">95</span>
+        </div>
+        <div class="score-row">
+          <span class="score-label">Warmth</span>
+          <div class="score-bar"><div class="score-fill" style="width:95%"></div></div>
+          <span class="score-value">95</span>
+        </div>
+        <div class="score-row">
+          <span class="score-label">Distinctive</span>
+          <div class="score-bar"><div class="score-fill" style="width:80%"></div></div>
+          <span class="score-value">80</span>
+        </div>
+        <div class="score-row">
+          <span class="score-label">Story Depth</span>
+          <div class="score-bar"><div class="score-fill" style="width:90%"></div></div>
+          <span class="score-value">90</span>
+        </div>
+        <div class="score-row">
+          <span class="score-label">TM Risk</span>
+          <span class="score-text">Moderate · Needs Legal Review</span>
+        </div>
+      </div>
+    </div>
+    <div class="name-card-body">
+      <div class="property-examples">
+        <strong>Property Naming</strong>
+        Linden at Elkhorn &nbsp;·&nbsp; Linden at Wheatfield West
+      </div>
+
+      <div class="name-meaning">A rooted, graceful name associated with shade, gathering, longevity, and civic spaces.</div>
+
+      <p class="name-story">Linden is a warm, natural name that fits the One Clover visual world without repeating the word Clover. It suggests a place of shade, comfort, and quiet permanence. A linden tree is often associated with gathering, protection, and long life — making it especially appropriate for active adult communities where residents are independent but still value connection and place.</p>
+
+      <p class="name-story">Unlike more obvious leaf or clover names, Linden feels residential, established, and refined. It gives the portfolio a name that can grow across markets without sounding generic, clinical, or overly senior-focused. It also sounds credible as a resident address — the kind of name a resident can give over the phone without explanation.</p>
+
+      <div class="tagline-box">
+        <div class="tagline-box-label">Possible Messaging Directions</div>
+        <p>"Independent apartment living with room to settle in." &nbsp;·&nbsp; "A rooted place for an easier next chapter." &nbsp;·&nbsp; "Active adult living with comfort, clarity, and connection."</p>
+      </div>
+
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Strengths</h4>
+          <ul>
+            <li>Best balance of warmth, sophistication, and usability</li>
+            <li>Nature-based without being too literal</li>
+            <li>Easy to say and spell across markets</li>
+            <li>Works cleanly in the approved lockup</li>
+            <li>Sounds credible as a resident address</li>
+            <li>Gives leadership a defensible story without forcing the Clover metaphor</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Considerations</h4>
+          <ul>
+            <li>Botanical names appear in real estate, hospitality, and senior living — legal review essential</li>
+            <li>Clover connection comes through lockup and visual identity, not the name itself</li>
+            <li>Requires confident brand expression to feel ownable</li>
+          </ul>
+        </div>
+      </div>
+
+      <span class="legal-note">⚠ All names require formal trademark review before selection</span>
+    </div>
+  </div>
+
+  <!-- VERITY -->
+  <div class="name-card">
+    <div class="name-card-header">
+      <div class="name-card-header-left">
+        <span class="name-tag tag-strong">Strong Candidate</span>
+        <h2>Verity</h2>
+        <div class="name-lockup">Verity by One Clover</div>
+        <div class="name-pronunciation">/ VAIR-ih-tee /</div>
+      </div>
+      <div class="name-scores">
+        <div class="score-row">
+          <span class="score-label">Brand Fit</span>
+          <div class="score-bar"><div class="score-fill" style="width:90%"></div></div>
+          <span class="score-value">90</span>
+        </div>
+        <div class="score-row">
+          <span class="score-label">Usability</span>
+          <div class="score-bar"><div class="score-fill" style="width:80%"></div></div>
+          <span class="score-value">80</span>
+        </div>
+        <div class="score-row">
+          <span class="score-label">Warmth</span>
+          <div class="score-bar"><div class="score-fill" style="width:75%"></div></div>
+          <span class="score-value">75</span>
+        </div>
+        <div class="score-row">
+          <span class="score-label">Distinctive</span>
+          <div class="score-bar"><div class="score-fill" style="width:90%"></div></div>
+          <span class="score-value">90</span>
+        </div>
+        <div class="score-row">
+          <span class="score-label">Story Depth</span>
+          <div class="score-bar"><div class="score-fill" style="width:90%"></div></div>
+          <span class="score-value">90</span>
+        </div>
+        <div class="score-row">
+          <span class="score-label">TM Risk</span>
+          <span class="score-text">Moderate · Needs Legal Review</span>
+        </div>
+      </div>
+    </div>
+    <div class="name-card-body">
+      <div class="property-examples">
+        <strong>Property Naming</strong>
+        Verity at Elkhorn &nbsp;·&nbsp; Verity at Wheatfield West
+      </div>
+
+      <div class="name-meaning">Truth, trust, and clarity.</div>
+
+      <p class="name-story">Verity is the most refined and confidence-led option in the shortlist. It suggests honesty, stability, and clear decision-making — all of which matter to residents and adult children making a meaningful housing decision.</p>
+
+      <p class="name-story">For a market-rate active adult audience, Verity avoids both extremes. It is not overly cute or casual, and it is not clinical. It feels composed, thoughtful, and trustworthy. This makes it a strong fit for the One Clover parent brand, especially given One Clover's preference for restraint and quiet authority.</p>
+
+      <div class="tagline-box">
+        <div class="tagline-box-label">Possible Messaging Directions</div>
+        <p>"A clearer choice for independent living." &nbsp;·&nbsp; "Independent living with confidence and ease." &nbsp;·&nbsp; "A place built on trust, comfort, and clarity."</p>
+      </div>
+
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Strengths</h4>
+          <ul>
+            <li>Strong trust cue for adult children and residents</li>
+            <li>More ownable than common senior living names</li>
+            <li>Elegant and short enough for signage</li>
+            <li>Works cleanly in the approved lockup</li>
+            <li>Modern without being trendy</li>
+            <li>Intellectually defensible for the committee</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Considerations</h4>
+          <ul>
+            <li>More abstract than Linden or Laurel</li>
+            <li>Requires a clear narrative so it does not feel cold</li>
+            <li>Some residents may need to hear it once before it feels familiar</li>
+          </ul>
+        </div>
+      </div>
+
+      <span class="legal-note">⚠ All names require formal trademark review before selection</span>
+    </div>
+  </div>
+
+  <!-- LAUREL -->
+  <div class="name-card">
+    <div class="name-card-header">
+      <div class="name-card-header-left">
+        <span class="name-tag tag-strong">Strong Candidate</span>
+        <h2>Laurel</h2>
+        <div class="name-lockup">Laurel by One Clover</div>
+        <div class="name-pronunciation">/ LOR-el / or / LAWR-el / — regional variation</div>
+      </div>
+      <div class="name-scores">
+        <div class="score-row">
+          <span class="score-label">Brand Fit</span>
+          <div class="score-bar"><div class="score-fill" style="width:90%"></div></div>
+          <span class="score-value">90</span>
+        </div>
+        <div class="score-row">
+          <span class="score-label">Usability</span>
+          <div class="score-bar"><div class="score-fill" style="width:90%"></div></div>
+          <span class="score-value">90</span>
+        </div>
+        <div class="score-row">
+          <span class="score-label">Warmth</span>
+          <div class="score-bar"><div class="score-fill" style="width:90%"></div></div>
+          <span class="score-value">90</span>
+        </div>
+        <div class="score-row">
+          <span class="score-label">Distinctive</span>
+          <div class="score-bar"><div class="score-fill" style="width:70%"></div></div>
+          <span class="score-value">70</span>
+        </div>
+        <div class="score-row">
+          <span class="score-label">Story Depth</span>
+          <div class="score-bar"><div class="score-fill" style="width:80%"></div></div>
+          <span class="score-value">80</span>
+        </div>
+        <div class="score-row">
+          <span class="score-label">TM Risk</span>
+          <span class="score-text">Moderate to Higher · Needs Legal Review</span>
+        </div>
+      </div>
+    </div>
+    <div class="name-card-body">
+      <div class="property-examples">
+        <strong>Property Naming</strong>
+        Laurel at Elkhorn &nbsp;·&nbsp; Laurel at Wheatfield West
+      </div>
+
+      <div class="name-meaning">Honor, achievement, dignity, and natural grace.</div>
+
+      <p class="name-story">Laurel is a graceful, leaf-adjacent name that connects naturally to One Clover without becoming too literal. It carries associations of accomplishment, dignity, and earned ease — which makes it a good fit for residents who want an address they can feel proud to share.</p>
+
+      <p class="name-story">The name feels familiar, warm, and established. It has a softer emotional quality than Verity and a more elegant tone than Vantage. It is also easy to picture within the One Clover visual system: deep green, white space, and a restrained botanical identity.</p>
+
+      <div class="tagline-box">
+        <div class="tagline-box-label">Possible Messaging Directions</div>
+        <p>"An address with ease, comfort, and quiet confidence." &nbsp;·&nbsp; "Independent living with grace and room to breathe." &nbsp;·&nbsp; "A place to settle into what comes next."</p>
+      </div>
+
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Strengths</h4>
+          <ul>
+            <li>Natural and leaf-adjacent without saying Clover</li>
+            <li>Warm, familiar, and dignified</li>
+            <li>Easy to say and remember</li>
+            <li>Strong visual compatibility with the One Clover mark</li>
+            <li>Appropriate for active adult housing without sounding like care</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Considerations</h4>
+          <ul>
+            <li>Widely used across place names, residential brands, and hospitality — careful legal review essential</li>
+            <li>Slight regional pronunciation variation</li>
+            <li>Less distinct than Verity</li>
+          </ul>
+        </div>
+      </div>
+
+      <span class="legal-note">⚠ All names require formal trademark review before selection</span>
+    </div>
+  </div>
+
+  <!-- VANTAGE -->
+  <div class="name-card">
+    <div class="name-card-header">
+      <div class="name-card-header-left">
+        <span class="name-tag tag-operational">Operationally Strong</span>
+        <h2>Vantage</h2>
+        <div class="name-lockup">Vantage by One Clover</div>
+        <div class="name-pronunciation">/ VAN-tij /</div>
+      </div>
+      <div class="name-scores">
+        <div class="score-row">
+          <span class="score-label">Brand Fit</span>
+          <div class="score-bar"><div class="score-fill" style="width:85%"></div></div>
+          <span class="score-value">85</span>
+        </div>
+        <div class="score-row">
+          <span class="score-label">Usability</span>
+          <div class="score-bar"><div class="score-fill" style="width:95%"></div></div>
+          <span class="score-value">95</span>
+        </div>
+        <div class="score-row">
+          <span class="score-label">Warmth</span>
+          <div class="score-bar"><div class="score-fill" style="width:70%"></div></div>
+          <span class="score-value">70</span>
+        </div>
+        <div class="score-row">
+          <span class="score-label">Distinctive</span>
+          <div class="score-bar"><div class="score-fill" style="width:80%"></div></div>
+          <span class="score-value">80</span>
+        </div>
+        <div class="score-row">
+          <span class="score-label">Story Depth</span>
+          <div class="score-bar"><div class="score-fill" style="width:70%"></div></div>
+          <span class="score-value">70</span>
+        </div>
+        <div class="score-row">
+          <span class="score-label">TM Risk</span>
+          <span class="score-text">Moderate · Needs Legal Review</span>
+        </div>
+      </div>
+    </div>
+    <div class="name-card-body">
+      <div class="property-examples">
+        <strong>Property Naming</strong>
+        Vantage at Elkhorn &nbsp;·&nbsp; Vantage at Wheatfield West
+      </div>
+
+      <div class="name-meaning">Perspective, confidence, and a better point of view.</div>
+
+      <p class="name-story">Vantage is the cleanest operational name in the shortlist. It is short, strong, and easy to use across property names, signage, leasing materials, and phone scripts. It suggests that residents are choosing from a position of perspective and confidence — not from need or decline.</p>
+
+      <p class="name-story">This name is less warm than Linden or Laurel, but it has a practical strength that matters. Property managers can say it all day. Residents can give it as an address. Adult children can understand it without explanation. It also avoids age markers and separates clearly from Connect55+.</p>
+
+      <div class="tagline-box">
+        <div class="tagline-box-label">Possible Messaging Directions</div>
+        <p>"Active adult apartments with a better point of view." &nbsp;·&nbsp; "A smarter way to live independently." &nbsp;·&nbsp; "A clear view of what comes next."</p>
+      </div>
+
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Strengths</h4>
+          <ul>
+            <li>Short, confident, and easy to say</li>
+            <li>Works well in property naming and signage</li>
+            <li>Avoids senior living clichés</li>
+            <li>Strong operational usability</li>
+            <li>Feels modern and clear</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Considerations</h4>
+          <ul>
+            <li>Less emotional warmth than Linden or Laurel</li>
+            <li>Can feel slightly commercial if not softened through visual identity and messaging</li>
+            <li>Likely used in other categories — legal review required</li>
+          </ul>
+        </div>
+      </div>
+
+      <span class="legal-note">⚠ All names require formal trademark review before selection</span>
+    </div>
+  </div>
+
+  <!-- FOUR BY CLOVER -->
+  <div class="name-card">
+    <div class="name-card-header">
+      <div class="name-card-header-left">
+        <span class="name-tag tag-reference">Client Reference Point · Not Recommended as Final Name</span>
+        <h2>Four by Clover</h2>
+        <div class="name-lockup" style="color:#A84C2D;">Four by Clover by One Clover — architecture conflict</div>
+        <div class="name-pronunciation">/ FOR by KLOH-ver /</div>
+      </div>
+      <div class="name-scores">
+        <div class="score-row">
+          <span class="score-label">Brand Fit</span>
+          <div class="score-bar"><div class="score-fill" style="width:55%"></div></div>
+          <span class="score-value">55</span>
+        </div>
+        <div class="score-row">
+          <span class="score-label">Usability</span>
+          <div class="score-bar"><div class="score-fill" style="width:55%"></div></div>
+          <span class="score-value">55</span>
+        </div>
+        <div class="score-row">
+          <span class="score-label">Warmth</span>
+          <div class="score-bar"><div class="score-fill" style="width:60%"></div></div>
+          <span class="score-value">60</span>
+        </div>
+        <div class="score-row">
+          <span class="score-label">Distinctive</span>
+          <div class="score-bar"><div class="score-fill" style="width:65%"></div></div>
+          <span class="score-value">65</span>
+        </div>
+        <div class="score-row">
+          <span class="score-label">Story Depth</span>
+          <div class="score-bar"><div class="score-fill" style="width:95%"></div></div>
+          <span class="score-value">95</span>
+        </div>
+        <div class="score-row">
+          <span class="score-label">Risk</span>
+          <span class="score-text">Brand Architecture Concern</span>
+        </div>
+      </div>
+    </div>
+    <div class="name-card-body">
+      <div class="name-meaning">A proposed concept built around the Joseph family of four, the four-leaf clover, Clover's fourth deal with Welltower, and possible four-pillar messaging.</div>
+
+      <p class="name-story">The internal story is genuinely strong. The concept honors the Joseph family, the origin of Clover, and the symbolism of the four-leaf clover. It also gives the team a useful campaign framework — four pillars such as Comfort, Community, Independence, and Trust.</p>
+
+      <p class="name-story">However, the idea works better as a narrative layer than as the final portfolio name. The approved architecture already uses "by One Clover," which means "Four by Clover" would likely become "Four by Clover by One Clover." That creates brand architecture confusion and weakens the name in real-world use.</p>
+
+      <div class="tagline-box">
+        <div class="tagline-box-label">Best Use of the Idea</div>
+        <p>Carry the "four" story forward as a supporting brand narrative — a four-pillar framework that lives inside marketing, signage, and resident-facing communications under the chosen portfolio name. The story is too good to lose, even if the name itself does not advance.</p>
+      </div>
+
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>Why the Idea Has Value</h4>
+          <ul>
+            <li>Strong internal meaning</li>
+            <li>Honors the Joseph family</li>
+            <li>Connects to the Clover origin story</li>
+            <li>Offers campaign structure around four pillars</li>
+            <li>May resonate as a reference point with leadership</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>Why It Should Not Be the Final Name</h4>
+          <ul>
+            <li>Awkward with approved "by One Clover" lockup</li>
+            <li>Repeats Clover unnecessarily</li>
+            <li>Includes a number, which the strategic brief discourages</li>
+            <li>Risks feeling like a product line or initiative rather than a place to live</li>
+            <li>Less natural for residents and property managers to say</li>
+            <li>Could create confusion with One Clover</li>
+          </ul>
+        </div>
+      </div>
+
+      <span class="legal-note">⚠ Architecture concern — retained for committee discussion, not as a finalist</span>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- COMPARISON TABLE -->
+  <div class="section-label">At a Glance</div>
+  <h2 class="section-title">Side-by-Side Comparison</h2>
+
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Brand Fit</th>
+        <th>Usability</th>
+        <th>Warmth</th>
+        <th>Distinct</th>
+        <th>Story</th>
+        <th>Risk</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="name-cell">Linden</td>
+        <td><span class="score-num">95</span></td>
+        <td><span class="score-num">95</span></td>
+        <td><span class="score-num">95</span></td>
+        <td><span class="score-num">80</span></td>
+        <td><span class="score-num">90</span></td>
+        <td><span class="pill pill-yellow">Moderate</span></td>
+        <td><span class="pill pill-green">Top Recommendation</span></td>
+      </tr>
+      <tr>
+        <td class="name-cell">Verity</td>
+        <td><span class="score-num">90</span></td>
+        <td><span class="score-num">80</span></td>
+        <td><span class="score-num">75</span></td>
+        <td><span class="score-num">90</span></td>
+        <td><span class="score-num">90</span></td>
+        <td><span class="pill pill-yellow">Moderate</span></td>
+        <td><span class="pill pill-blue">Strong Candidate</span></td>
+      </tr>
+      <tr>
+        <td class="name-cell">Laurel</td>
+        <td><span class="score-num">90</span></td>
+        <td><span class="score-num">90</span></td>
+        <td><span class="score-num">90</span></td>
+        <td><span class="score-num">70</span></td>
+        <td><span class="score-num">80</span></td>
+        <td><span class="pill pill-yellow">Mod–Higher</span></td>
+        <td><span class="pill pill-blue">Strong Candidate</span></td>
+      </tr>
+      <tr>
+        <td class="name-cell">Vantage</td>
+        <td><span class="score-num">85</span></td>
+        <td><span class="score-num">95</span></td>
+        <td><span class="score-num">70</span></td>
+        <td><span class="score-num">80</span></td>
+        <td><span class="score-num">70</span></td>
+        <td><span class="pill pill-yellow">Moderate</span></td>
+        <td><span class="pill pill-purple">Operationally Strong</span></td>
+      </tr>
+      <tr>
+        <td class="name-cell">Four by Clover</td>
+        <td><span class="score-num">55</span></td>
+        <td><span class="score-num">55</span></td>
+        <td><span class="score-num">60</span></td>
+        <td><span class="score-num">65</span></td>
+        <td><span class="score-num">95</span></td>
+        <td><span class="pill pill-yellow">Architecture</span></td>
+        <td><span class="pill pill-yellow">Reference Only</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr class="divider">
+
+  <!-- RECOMMENDATION -->
+  <div class="recommendation">
+    <div class="section-label">Our Recommendation</div>
+    <h2>Three Finalists, One Clear Lead</h2>
+    <div class="rec-grid">
+      <div class="rec-card">
+        <div class="rec-num">01</div>
+        <div class="rec-position">Best Overall Fit</div>
+        <div class="rec-name">Linden</div>
+        <div class="rec-why">Best balance of warmth, resident usability, natural One Clover alignment, and story depth. The strongest single answer to the brief.</div>
+      </div>
+      <div class="rec-card">
+        <div class="rec-num">02</div>
+        <div class="rec-position">Best Refined Option</div>
+        <div class="rec-name">Verity</div>
+        <div class="rec-why">Strongest trust and clarity cue. The right choice if the committee wants a more polished, confidence-led brand.</div>
+      </div>
+      <div class="rec-card">
+        <div class="rec-num">03</div>
+        <div class="rec-position">Best Graceful Alternative</div>
+        <div class="rec-name">Laurel</div>
+        <div class="rec-why">Warm, leaf-adjacent, and dignified. Strong visual fit with One Clover, with the caveat that it likely needs careful legal review.</div>
+      </div>
+    </div>
+    <div class="rec-footer">
+      <p><strong>Vantage</strong> should be kept as a practical backup. It performs well operationally and has the clearest property-naming usability, even though it carries less emotional warmth than the three finalists.</p>
+      <p style="margin-top:12px;"><strong>Four by Clover</strong> should be retained in the document as a client-submitted reference point with valuable internal meaning. The "four pillars" story is worth carrying forward as a narrative layer under whichever name is selected — but it should not be advanced as the final portfolio name.</p>
+    </div>
+  </div>
+
+  <!-- QUICK REFERENCE SUMMARY -->
+  <div class="summary-section">
+    <h2>Quick Reference Summary</h2>
+    <div class="summary-row">
+      <div class="summary-name">Linden</div>
+      <div class="summary-desc">Best overall recommendation. Warm, natural, easy to use, and aligned with One Clover without repeating Clover.</div>
+      <span class="pill pill-green">Top Recommendation</span>
+    </div>
+    <div class="summary-row">
+      <div class="summary-name">Verity</div>
+      <div class="summary-desc">Most refined and trust-led. Strong for adult children and decision confidence, but more abstract.</div>
+      <span class="pill pill-blue">Strong Candidate</span>
+    </div>
+    <div class="summary-row">
+      <div class="summary-name">Laurel</div>
+      <div class="summary-desc">Warm and dignified. Strong visual fit, but less ownable and needs careful legal review.</div>
+      <span class="pill pill-blue">Strong Candidate</span>
+    </div>
+    <div class="summary-row">
+      <div class="summary-name">Vantage</div>
+      <div class="summary-desc">Most practical and operationally clean. Less emotional, but strong for signage and daily use.</div>
+      <span class="pill pill-purple">Operational Backup</span>
+    </div>
+    <div class="summary-row">
+      <div class="summary-name">Four by Clover</div>
+      <div class="summary-desc">Meaningful internal story. Best used as narrative input under the chosen name, not as the final portfolio name.</div>
+      <span class="pill pill-yellow">Reference Only</span>
+    </div>
+  </div>
+
+  <!-- EXPLORED BUT NOT RECOMMENDED -->
+  <div class="excluded-section">
+    <h3>Explored but Not Recommended</h3>
+    <p>Earlier exploration considered several Clover-prefixed and metaphor-led names. After applying the revised architecture framework, these have been set aside. Each repeats Clover unnecessarily or leans on a story that does not match active adult market-rate positioning.</p>
+    <ul class="excluded-list">
+      <li>
+        <span class="excluded-name">Luckfield</span>
+        <span>Leans too heavily on the idea of luck. Casual register for a serious housing decision and a long-term resident address.</span>
+      </li>
+      <li>
+        <span class="excluded-name">Clover & Kin</span>
+        <span>Warm, but reads as family-care language and repeats Clover unnecessarily. Creates lockup duplication.</span>
+      </li>
+      <li>
+        <span class="excluded-name">Clover Hearth</span>
+        <span>Sounds closer to hospitality or themed care than active adult independent living. Repeats Clover and conflicts with the lockup.</span>
+      </li>
+      <li>
+        <span class="excluded-name">Clover Roots</span>
+        <span>Backward-looking. Carries botanical search clutter and again repeats Clover within the lockup.</span>
+      </li>
+    </ul>
+  </div>
+
+  <hr class="divider">
+
+  <div class="doc-footer">
+    <p><strong>All naming candidates require formal trademark review before final selection.</strong><br>
+    This document is a strategic recommendation only and should not be treated as legal clearance. Trademark risk indicators reflect directional, initial screening — not legal opinion.</p>
+    <p style="margin-top:16px;">Confidential. Prepared for internal review and presentation to Clover leadership and Welltower.</p>
+  </div>
+</div>
+
+</body>
+</html>
